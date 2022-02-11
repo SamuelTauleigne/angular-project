@@ -18,8 +18,7 @@ export class ContactComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder
-  ) {
-  }
+  ) {}
 
   ngOnInit(): void {
   }
@@ -28,7 +27,7 @@ export class ContactComponent implements OnInit {
     if (this.contactForm.status !== 'VALID') {
       alert('Invalid : email and message are required ...')
     } else {
-      alert(`Email: ${this.contactForm.value.email} \nMessage: ${this.contactForm.value.message} \nYour message has been sent!`)
+      alert(`Email: ${this.contactForm.value.email} \nMessage: ${this.contactForm.value.message} \nYour message has been sent with success !`)
       this.contactForm.reset();
       this.dialogChange.emit(false)
     }

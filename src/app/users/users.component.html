@@ -11,13 +11,9 @@
         <h3>
             {{ selection.name }}
         </h3>
-
-        <p>
-            {{ '@' + selection.username }}
-        </p>
-        <p>
-            {{ selection.location }}
-        </p>
+        <div>
+            {{ '@' + selection.username + ', ' + selection.location }}
+        </div>
         <app-btn [btntext]="'Close'" (click)="dialog = false"></app-btn>
     </div>
 </app-dialog>

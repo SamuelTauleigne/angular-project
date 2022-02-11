@@ -1,17 +1,26 @@
 <h1>Orders List</h1>
 <div *ngFor="let order of orders" (click)="openDialog(order)">
-    {{ 'Order #' + order.id + 'by ' + order.user.name }}
-    <br>
-    {{ order.products.length + ' items : ' + getTotalOrder(order) }}
+    <div>
+        <div>
+            {{ 'Order #' + order.id + ' by ' + order.user.name }}
+        </div>
+        <div>
+            {{ order.products.length + ' items : ' + getTotalOrder(order) }}    
+        </div>
+    </div>
 </div>
 
 <app-dialog [(dialog)]="dialog">
     <div *ngIf="selection">
-        {{ 'Order #' + selection.id + 'by ' + selection.user.name }}
-        <div *ngFor="let product of selection.products">
-            {{ product.name + ' at ' + formatPrice(product.price) }}
+        <div>
+            <h3>
+                {{ 'Order #' + selection.id + ' by ' + selection.user.name }}
+            </h3>
+            <div *ngFor="let product of selection.products">
+                {{ product.name + ' at ' + product.price }}
+            </div>
+            Order total : {{ getTotalOrder(selection) }}
         </div>
-        Order total : {{ getTotalOrder(selection) }}
     </div>
     <div>
         <app-btn [btntext]="'Close'" (click)="dialog = false"></app-btn>
