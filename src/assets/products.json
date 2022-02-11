@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Ecouteurs Filaires",
+        "description": "Ecouteurs filaires parfaits pour aller au travail en écoutant votre musique préférée",
+        "price": 14.99
+    },
+    {
+        "id": 2,
+        "name": "Ecouteurs Sans-Fils",
+        "description": "Ecouteurs sans-fils parfaits pour aller courir en écoutant votre musique préférée",
+        "price": 44.99
+    },
+    {
+        "id": 3,
+        "name": "Casque Audio Sans-Fils",
+        "description": "Casque Audio sans-fils parfaits pour jouer en ligne avec vos amis",
+        "price": 244.99
+    }
+]

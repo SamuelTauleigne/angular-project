@@ -1,0 +1,26 @@
+<h1>Products</h1>
+
+<div *ngFor="let product of products" (click)="openDialog(product)">
+    <p>
+        {{ product.name + ' : ' + product.description }}
+        <br>
+        {{ formatPrice(product.price) }}
+    </p>
+</div>
+
+<app-dialog [(dialog)]="dialog">
+    <div *ngIf="selection">
+        <h3>
+            {{ selection.name }}
+        </h3>
+        <p>
+            {{ selection.description }}
+        </p>
+        <p>
+            {{ formatPrice(selection.price) }}
+        </p>
+        <app-btn [btntext]="'Close'" (click)="dialog = false"></app-btn>
+    
+    </div>
+
+</app-dialog>

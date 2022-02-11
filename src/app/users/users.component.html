@@ -1,0 +1,23 @@
+<h1>Users List</h1>
+
+<div *ngFor="let user of users" (click)="openDialog(user)">
+    <div>
+        {{ user.name }}
+    </div>
+</div>
+
+<app-dialog [(dialog)]="dialog">
+    <div *ngIf="selection">
+        <h3>
+            {{ selection.name }}
+        </h3>
+
+        <p>
+            {{ '@' + selection.username }}
+        </p>
+        <p>
+            {{ selection.location }}
+        </p>
+        <app-btn [btntext]="'Close'" (click)="dialog = false"></app-btn>
+    </div>
+</app-dialog>

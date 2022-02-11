@@ -1,0 +1,23 @@
+<app-dialog [(dialog)]="dialog">
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="email-address">Email</label>
+            <input id="email-address" type="email" required placeholder="name@mail.com" formControlName="email">
+        </div>
+        <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="email" rows="3" required placeholder="Eveything you want !"
+                formControlName="message">
+            </textarea>
+        </div>
+
+        <div>
+            <app-btn [btntext]="'Close'" (click)="dialogChange.emit(false)"></app-btn>
+            <button type="submit">
+                Send Message
+            </button>
+        </div>
+    </form>
+
+</app-dialog>
